@@ -1,0 +1,36 @@
+# Virtuelle Umgebung
+.venv/
+env/
+venv/
+
+# Python Bytecode-Dateien
+__pycache__/
+*.py[cod]
+
+# PyCharm-spezifische Dateien
+.idea/
+
+# VSCode-spezifische Dateien
+.vscode/
+
+# Betriebssystem-spezifische Dateien (MacOS und Windows)
+.DS_Store
+Thumbs.db
+
+# Log-Dateien
+*.log
+
+# Unit Test Coverage Reports und Caches
+htmlcov/
+coverage.xml
+*.cover
+.cache
+
+# Distribution/Build-Verzeichnisse (für setup.py oder build-Systeme)
+build/
+dist/
+*.egg-info/
+
+# Pipenv- und Poetry-spezifisch (falls verwendet)
+Pipfile.lock
+poetry.lock
