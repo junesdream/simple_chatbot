@@ -3,23 +3,26 @@ import random
 
 # Predefined responses for specific keywords or phrases
 faq_responses = {
-   "hallo|hi|hey": ["Hello!", "Hi there!", "Greetings!", "Hi!"],
+    "hello|hi|hey": ["Hello!", "Hi there!", "Greetings!", "Hi!"],
     "how are you?|you good?": ["I'm good, thank you!", "I'm just a chatbot, but I'm doing great!"],
     "who are you|what is your name?": ["I am a simple chatbot.", "I am your virtual assistant."],
     "bye|ciao": ["Goodbye!", "See you later!", "Have a nice day!"],
     "help|support me": ["How can I assist you?", "I'm here to help!"],
-    "weather|how is today?": ["Sorry, I don't have access to weather data.", "The weather is always an interesting topic!"],
+    "weather|how is today?": ["Sorry, I don't have access to weather data.",
+                              "The weather is always an interesting topic!"],
     "thank you|thanks": ["You're welcome!", "No problem!", "Happy to help!"]
 }
 
 
 # Function to find an answer based on keywords
+
 def generate_faq_response(user_input):
     response = "I don't understand that. Can you put it another way?"
 
-    # Search the dictionary for a matching keyword
+    # Durchsuche das Wörterbuch nach einem passenden Schlüsselwort
     for keyword, responses in faq_responses.items():
-        if re.search(r'\b' + keyword + r'\b', user_input, re.IGNORECASE):
+        # Entferne die Wortgrenzen und überprüfe nur, ob das Schlüsselwort im Text enthalten ist
+        if re.search(keyword, user_input, re.IGNORECASE):
             response = random.choice(responses)
             break
 
